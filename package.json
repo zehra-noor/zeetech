@@ -10,8 +10,7 @@
     "server": "nodemon backend/index.js",
     "dev": "concurrently \"npm run client\" \" npm run server \"",
     "data:import": "node backend/seeder.js",
-    "data:destroy": "node backend/seeder.js -d",
-    "vercel-build":"echo hello"
+    "data:destroy": "node backend/seeder.js -d"
   },
   "author": "Zehra Noor",
   "license": "MIT",
