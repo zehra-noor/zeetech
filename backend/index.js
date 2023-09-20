@@ -67,10 +67,10 @@ app.use("/", (req, res) => {
   res.json({ message: "hello world!" });
 });
 
-// app.use("/api/products", productRoutes);
-// app.use("/api/users", userRoutes);
-// app.use("/api/orders", orderRoutes);
-// app.use("/api/upload", uploadRoutes);
+app.use("/api/products", productRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/upload", uploadRoutes);
 
 //middleware
 app.use(notFound);
