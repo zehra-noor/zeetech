@@ -70,7 +70,5 @@ app.use("/api/upload", uploadRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-console.log(`listening on the port: ${port}`);
-
 // server listening to port
 app.listen(port, () => console.log(`listening on the port: ${port}`));
