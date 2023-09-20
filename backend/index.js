@@ -62,6 +62,10 @@ if (process.env.NODE_ENV === "production") {
 }
 
 //routes
+export default function handler(request, response) {
+  const { name = "World" } = request.query;
+  return response.send(`Hello ${name}!`);
+}
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
