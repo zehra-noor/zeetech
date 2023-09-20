@@ -43,23 +43,23 @@ app.use(express.urlencoded({ extended: true }));
 //cookie parser middleware
 app.use(cookieParser());
 
-// if (process.env.NODE_ENV === "production") {
-//   const __dirname = path.resolve();
-//   app.use(express.static(path.join(__dirname, "/frontend/build")));
+if (process.env.NODE_ENV === "production") {
+  const __dirname = path.resolve();
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
 
-//   //uploads
-//   app.use("/uploads", express.static("/var/data/uploads"));
+  //uploads
+  app.use("/uploads", express.static("/var/data/uploads"));
 
-//   app.get("*", (req, res) =>
-//     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
-//   );
-// } else {
-//   const __dirname = path.resolve();
-//   app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
-//   app.get("/", (req, res) => {
-//     res.send("API is running....");
-//   });
-// }
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+  );
+} else {
+  const __dirname = path.resolve();
+  app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
+  app.get("/", (req, res) => {
+    res.send("API is running....");
+  });
+}
 
 //routes
 app.use("/api/products", productRoutes);
