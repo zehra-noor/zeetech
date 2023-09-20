@@ -64,7 +64,7 @@ if (process.env.NODE_ENV === "production") {
 //routes
 app.use("/", (req, res) => {
   console.log("hello world");
-  return res.send("Hello World!");
+  res.json({ message: "hello world!" });
 });
 
 // app.use("/api/products", productRoutes);
