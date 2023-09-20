@@ -14,13 +14,14 @@ dotenv.config();
 // port
 const port = process.env.PORT || 5000;
 
-// //cors
-// import cors from "cors";
-// app.use(
-//   cors({
-//     origin: "http://localhost:3000",
-//   })
-// );
+//cors
+import cors from "cors";
+// Allow all origins
+app.use(cors());
+// Allow specific origin(s)
+// app.use(cors({
+//   origin: 'https://yourdeployedsite.com'
+// }));
 
 //middleware
 import { notFound, errorHandler } from "./middleware/errorHandler.js";
