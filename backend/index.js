@@ -61,11 +61,11 @@ app.use(cookieParser());
 //   });
 // }
 
-//routes
-// app.use("/", (req, res) => {
-//   console.log("hello world");
-//   res.json({ message: "hello world!" });
-// });
+routes;
+app.use("/", (req, res) => {
+  console.log("hello world");
+  res.json({ message: "hello world!" });
+});
 
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
